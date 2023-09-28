@@ -1,12 +1,13 @@
 import { registerRootComponent } from 'expo';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import CategoriesPage from './pages/CategoriesPage';
 
 export function App() {
   return (
-    <View className="flex-1 bg-white items-center justify-center">
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <SafeAreaProvider className="flex-1">
+      <CategoriesPage />
+    </SafeAreaProvider>
   );
 }
 registerRootComponent(App);
