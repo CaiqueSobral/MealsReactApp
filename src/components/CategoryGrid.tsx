@@ -11,7 +11,7 @@ export default function CategoryGrid(props: Props) {
     <View className="flex-1 items-center justify-center">
       <TouchableOpacity
         style={{ backgroundColor: props.color }}
-        className={`w-[85%] h-40 m-6 items-center justify-center rounded-3xl shadow-2xl`}
+        className={`w-[85%] h-40 m-4 items-center justify-center rounded-3xl shadow-2xl`}
       >
         <Text className="text-center font-bold text-lg">{props.title}</Text>
       </TouchableOpacity>
