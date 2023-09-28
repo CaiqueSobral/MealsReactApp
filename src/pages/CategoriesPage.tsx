@@ -5,26 +5,31 @@ import Category from '../models/category';
 import CategoryGrid from '../components/CategoryGrid';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const renderCategoryItem = (itemData: ListRenderItemInfo<Category>) => {
-  return (
-    <CategoryGrid title={itemData.item.title} color={itemData.item.color} />
-  );
-};
+export default function CategoriesPage({ navigation }: any) {
+  const renderCategoryItem = (itemData: ListRenderItemInfo<Category>) => {
+    function pressHandler() {
+      navigation.navigate('MealsPage', { categoryId: itemData.item.id });
+    }
 
-export default function CategoriesPage() {
+    return (
+      <CategoryGrid
+        title={itemData.item.title}
+        color={itemData.item.color}
+        onPress={pressHandler}
+      />
+    );
+  };
+
   return (
     <SafeAreaView className="flex-1">
-      <View className="flex-1">
-        <FlatList
-          className="flex-1"
-          data={CATEGORIES}
-          keyExtractor={(item) => item.id}
-          numColumns={2}
-          renderItem={(itemData) => {
-            return renderCategoryItem(itemData);
-          }}
-        />
-      </View>
+      <FlatList
+        data={CATEGORIES}
+        keyExtractor={(item) => item.id}
+        numColumns={2}
+        renderItem={(itemData) => {
+          return renderCategoryItem(itemData);
+        }}
+      />
     </SafeAreaView>
   );
 }
