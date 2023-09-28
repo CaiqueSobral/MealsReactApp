@@ -1,4 +1,4 @@
-import mealInterface from '@/interfaces/mealInterface';
+import mealInterface from '../interfaces/mealInterface';
 
 export default class Meal implements mealInterface {
   id: string;

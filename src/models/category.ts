@@ -1,4 +1,4 @@
-import categoryInterface from '@/interfaces/categoryInterface';
+import categoryInterface from '../interfaces/categoryInterface';
 
 export default class Category implements categoryInterface {
   id: string;
