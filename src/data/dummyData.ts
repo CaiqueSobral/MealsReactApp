@@ -2,16 +2,34 @@ import Category from '../models/category';
 import Meal from '../models/meal';
 
 export const CATEGORIES = [
-  new Category('c1', 'Italian', '#FFC7C7'),
-  new Category('c2', 'Quick & Easy', '#F38181'),
-  new Category('c3', 'Hamburgers', '#F08A5D'),
-  new Category('c4', 'German', '#FBD85D'),
-  new Category('c5', 'Light & Lovely', '#279EFF'),
-  new Category('c6', 'Exotic', '#79AC78'),
-  new Category('c7', 'Breakfast', '#9eecff'),
-  new Category('c8', 'Asian', '#b9ffb0'),
-  new Category('c9', 'French', '#ffc7ff'),
-  new Category('c10', 'Summer', '#5CD2E6'),
+  new Category(
+    'c1',
+    'Italian',
+    '../../assets/images/flags/italy.png',
+    ['pros1', 'pros2'],
+    ['cons1', 'cons2'],
+  ),
+  new Category(
+    'c2',
+    'German',
+    '../../assets/images/flags/germany.png',
+    ['pros1', 'pros2'],
+    ['cons1', 'cons2'],
+  ),
+  new Category(
+    'c3',
+    'Japanese',
+    '../../assets/images/flags/japan.png',
+    ['pros1', 'pros2'],
+    ['cons1', 'cons2'],
+  ),
+  new Category(
+    'c4',
+    'French',
+    '../../assets/images/flags/france.png',
+    ['pros1', 'pros2'],
+    ['cons1', 'cons2'],
+  ),
 ];
 
 export const MEALS = [
