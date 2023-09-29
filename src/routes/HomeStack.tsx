@@ -26,9 +26,10 @@ export default function HomeStackNavigator() {
         animation: 'slide_from_right',
       }}
     >
-      {SCREENS.map((screenData) => {
+      {SCREENS.map((screenData, i) => {
         return (
           <Stack.Screen
+            key={i}
             name={screenData.name}
             component={screenData.component}
           ></Stack.Screen>
