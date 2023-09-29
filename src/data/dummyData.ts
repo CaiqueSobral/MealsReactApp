@@ -1,36 +1,39 @@
 import Category from '../models/category';
 import Meal from '../models/meal';
 
-export const CATEGORIES = [
-  new Category(
-    'c1',
-    'Italian',
-    '../../assets/images/flags/italy.png',
-    ['pros1', 'pros2'],
-    ['cons1', 'cons2'],
-  ),
-  new Category(
-    'c2',
-    'German',
-    '../../assets/images/flags/germany.png',
-    ['pros1', 'pros2'],
-    ['cons1', 'cons2'],
-  ),
-  new Category(
-    'c3',
-    'Japanese',
-    '../../assets/images/flags/japan.png',
-    ['pros1', 'pros2'],
-    ['cons1', 'cons2'],
-  ),
-  new Category(
-    'c4',
-    'French',
-    '../../assets/images/flags/france.png',
-    ['pros1', 'pros2'],
-    ['cons1', 'cons2'],
-  ),
-];
+const c1 = new Category(
+  'c1',
+  'Italian',
+  require('../../assets/images/flags/italy.png'),
+  ['pros1', 'pros2'],
+  ['cons1', 'cons2'],
+);
+
+const c2 = new Category(
+  'c2',
+  'German',
+  require('../../assets/images/flags/germany.png'),
+  ['pros1', 'pros2'],
+  ['cons1', 'cons2'],
+);
+
+const c3 = new Category(
+  'c3',
+  'Japanese',
+  require('../../assets/images/flags/japan.png'),
+  ['pros1', 'pros2'],
+  ['cons1', 'cons2'],
+);
+
+const c4 = new Category(
+  'c4',
+  'French',
+  require('../../assets/images/flags/france.png'),
+  ['pros1', 'pros2'],
+  ['cons1', 'cons2'],
+);
+
+export const CATEGORIES = [c1, c2, c3, c4];
 
 export const MEALS = [
   new Meal(

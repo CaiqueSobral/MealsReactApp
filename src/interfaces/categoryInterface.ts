@@ -1,7 +1,9 @@
+import { ImageProps } from 'react-native';
+
 export default interface categoryInterface {
   id: string;
   title: string;
-  image: string;
+  imageName: ImageProps;
   pros: string[];
   cons: string[];
 }
