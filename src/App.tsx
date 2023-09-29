@@ -9,7 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 export function App() {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <SafeAreaProvider className="flex-1">
         <NavigationContainer>
           <RootNavigator />
