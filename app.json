@@ -3,7 +3,6 @@
     "entryPoint": "./src/App.tsx",
     "name": "MealsReactApp",
     "slug": "MealsReactApp",
-    "backgroundColor": "#393646",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
