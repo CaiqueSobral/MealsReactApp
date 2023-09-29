@@ -1,9 +1,11 @@
 import React from 'react';
 import { CATEGORIES } from '../data/dummyData';
-import { FlatList, ListRenderItemInfo, View } from 'react-native';
+import { ListRenderItemInfo } from 'react-native';
 import Category from '../models/category';
-import CategoryGrid from '../components/CategoryGrid';
+import CategoryGrid from '../components/categories/CategoryGrid';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+const c1 = CATEGORIES[0];
 
 export default function CategoriesPage({ navigation }: any) {
   const renderCategoryItem = (itemData: ListRenderItemInfo<Category>) => {
@@ -11,24 +13,16 @@ export default function CategoriesPage({ navigation }: any) {
       navigation.navigate('MealsPage', { categoryId: itemData.item.id });
     }
 
-    return (
-      <CategoryGrid
-        title={itemData.item.title}
-        color={itemData.item.color}
-        onPress={pressHandler}
-      />
-    );
+    //return <CategoryGrid title={itemData.item.title} onPress={pressHandler} />;
   };
 
   return (
     <SafeAreaView className="flex-1">
-      <FlatList
-        data={CATEGORIES}
-        keyExtractor={(item) => item.id}
-        numColumns={2}
-        renderItem={(itemData) => {
-          return renderCategoryItem(itemData);
-        }}
+      <CategoryGrid
+        title={c1.title}
+        imageName={c1.imageName}
+        pros={c1.pros}
+        cons={c1.cons}
       />
     </SafeAreaView>
   );
