@@ -6,4 +6,5 @@ export default interface categoryInterface {
   imageName: ImageProps;
   pros: string[];
   cons: string[];
+  colors: string[];
 }
