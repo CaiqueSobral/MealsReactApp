@@ -1,4 +1,4 @@
-import { CATEGORIES, CATEGORYCOLORS } from '../data/dummyData';
+import { CATEGORIES, CATEGORYCOLORS } from '../data/categoriesData';
 import { Dimensions } from 'react-native';
 import CategoryGrid from '../components/categories/CategoryGrid';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,19 +7,22 @@ import Animated, {
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
-  withTiming,
 } from 'react-native-reanimated';
 
 export default function CategoriesPage({ navigation }: any) {
   const insets = useSafeAreaInsets();
   const progress = useSharedValue(0);
 
+  const inputRangeBG = CATEGORYCOLORS.map((_, i) => {
+    return i;
+  });
+
   const animatedBG = useAnimatedStyle(() => {
     return {
       backgroundColor: interpolateColor(
         progress.value,
-        [0, 1, 2, 3],
-        CATEGORYCOLORS,
+        [...inputRangeBG, inputRangeBG.length],
+        [...CATEGORYCOLORS, CATEGORYCOLORS[0]],
       ),
     };
   });
@@ -55,7 +58,6 @@ export default function CategoriesPage({ navigation }: any) {
         onProgressChange={(_, b) => {
           progress.value = b;
         }}
-        loop={false}
       />
     </Animated.View>
   );

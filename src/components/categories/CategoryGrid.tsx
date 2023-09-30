@@ -15,7 +15,7 @@ export default function CategoryGrid(props: Props) {
   const renderImageView = () => {
     return (
       <View className="flex-1 justify-center items-center">
-        <View className="w-[80%] h-[80%] shadow-2xl shadow-gray-600">
+        <View className="w-[80%] h-[80%] shadow-3xl shadow-gray-600">
           <Image
             style={{
               width: undefined,
@@ -60,7 +60,7 @@ export default function CategoryGrid(props: Props) {
   };
   return (
     <Pressable
-      className={`flex-1 m-4 rounded-3xl shadow-2xl`}
+      className={`flex-1 m-4 rounded-3xl shadow-2xl p`}
       style={{ backgroundColor: props.colors[0] }}
       onPress={props.onPress}
     >
