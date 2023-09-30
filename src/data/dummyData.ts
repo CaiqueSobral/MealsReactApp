@@ -5,35 +5,36 @@ const c1 = new Category(
   'c1',
   'Italian',
   require('../../assets/images/flags/italy.png'),
-  ['pros1', 'pros2'],
-  ['cons1', 'cons2'],
+  ['Easy cook', 'Cheese', 'Pizza', 'Pasta'],
+  ['The same', 'Tiramisu', 'Bread'],
 );
 
 const c2 = new Category(
   'c2',
   'German',
   require('../../assets/images/flags/germany.png'),
-  ['pros1', 'pros2'],
-  ['cons1', 'cons2'],
+  ['Pros1', 'pros2', 'pros3', 'pros4'],
+  ['cons1', 'cons2', 'cons3'],
 );
 
 const c3 = new Category(
   'c3',
   'Japanese',
   require('../../assets/images/flags/japan.png'),
-  ['pros1', 'pros2'],
-  ['cons1', 'cons2'],
+  ['Pros1', 'pros2', 'pros3', 'pros4'],
+  ['cons1', 'cons2', 'cons3'],
 );
 
 const c4 = new Category(
   'c4',
   'French',
   require('../../assets/images/flags/france.png'),
-  ['pros1', 'pros2'],
-  ['cons1', 'cons2'],
+  ['Pros1', 'pros2', 'pros3', 'pros4'],
+  ['cons1', 'cons2', 'cons3'],
 );
 
 export const CATEGORIES = [c1, c2, c3, c4];
+export const CATEGORYCOLORS = ['#ffefd7', '#C4D7B2', '#545B77', '#BA90C6'];
 
 export const MEALS = [
   new Meal(

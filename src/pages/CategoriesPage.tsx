@@ -1,29 +1,49 @@
-import React from 'react';
-import { CATEGORIES } from '../data/dummyData';
-import { ListRenderItemInfo } from 'react-native';
-import Category from '../models/category';
+import React, { useState } from 'react';
+import { CATEGORIES, CATEGORYCOLORS } from '../data/dummyData';
+import { Animated, Dimensions, SafeAreaView, View } from 'react-native';
 import CategoryGrid from '../components/categories/CategoryGrid';
-import { SafeAreaView } from 'react-native-safe-area-context';
-
-const c1 = CATEGORIES[0];
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Carousel from 'react-native-reanimated-carousel';
 
 export default function CategoriesPage({ navigation }: any) {
-  const renderCategoryItem = (itemData: ListRenderItemInfo<Category>) => {
-    function pressHandler() {
-      navigation.navigate('MealsPage', { categoryId: itemData.item.id });
-    }
+  const insets = useSafeAreaInsets();
+  let backColor = '#ffefd7';
 
-    //return <CategoryGrid title={itemData.item.title} onPress={pressHandler} />;
+  const changeBackColor = (currentI: number) => {
+    backColor = backColor;
+  };
+
+  const ViewInsets = {
+    paddingTop: insets.top,
+    paddingRight: insets.right,
+    paddingLeft: insets.left,
+    paddingBottom: insets.bottom,
   };
 
   return (
-    <SafeAreaView className="flex-1">
-      <CategoryGrid
-        title={c1.title}
-        imageName={c1.imageName}
-        pros={c1.pros}
-        cons={c1.cons}
+    <Animated.View
+      style={[{ backgroundColor: backColor }, ViewInsets]}
+      className="flex-1"
+    >
+      <Carousel
+        data={CATEGORIES}
+        width={Dimensions.get('window').width}
+        mode="parallax"
+        modeConfig={{
+          parallaxScrollingScale: 1,
+          parallaxAdjacentItemScale: 0.5,
+        }}
+        renderItem={(itemData) => {
+          return (
+            <CategoryGrid
+              title={itemData.item.title}
+              imageName={itemData.item.imageName}
+              pros={itemData.item.pros}
+              cons={itemData.item.cons}
+            />
+          );
+        }}
       />
-    </SafeAreaView>
+    </Animated.View>
   );
 }
