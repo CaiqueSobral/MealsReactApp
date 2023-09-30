@@ -1,40 +1,26 @@
 import Meal from '../models/meal';
-import { MEALS } from '../data/dummyData';
+import { MEALS } from '../data/mealsData';
 import React from 'react';
-import { Dimensions, FlatList, ListRenderItemInfo } from 'react-native';
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-import MealCard from '../components/MealCard';
+import { FlatList, ListRenderItemInfo } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MealCard from '../components/meals/MealCard';
 
 export default function MealsPage({ route }: any) {
   const catId = route.params.categoryId;
 
   const mealsByCategory = MEALS.filter((mealItem) => {
-    return mealItem.categoryIds.includes(catId);
+    return mealItem.categoryId === catId;
   });
 
-  const renderMealData = (
-    itemData: ListRenderItemInfo<Meal>,
-    flatHeight: number,
-  ) => {
-    return <MealCard mealName={itemData.item.title} height={flatHeight} />;
+  console.log(mealsByCategory);
+
+  const renderMealData = (itemData: ListRenderItemInfo<Meal>) => {
+    return <MealCard meal={itemData.item} />;
   };
 
-  const HEIGHT =
-    Dimensions.get('window').height -
-    useSafeAreaInsets().bottom -
-    useSafeAreaInsets().top;
-
   return (
-    <SafeAreaView className="flex-1 px-4 py-2">
-      <FlatList
-        pagingEnabled
-        data={mealsByCategory}
-        keyExtractor={(item) => item.id}
-        renderItem={(itemData) => renderMealData(itemData, HEIGHT)}
-      />
+    <SafeAreaView className="flex-1 py-4 px-4">
+      <MealCard meal={mealsByCategory[0]} />
     </SafeAreaView>
   );
 }
