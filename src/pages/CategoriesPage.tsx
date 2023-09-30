@@ -1,17 +1,28 @@
-import React, { useState } from 'react';
 import { CATEGORIES, CATEGORYCOLORS } from '../data/dummyData';
-import { Animated, Dimensions, SafeAreaView, View } from 'react-native';
+import { Dimensions } from 'react-native';
 import CategoryGrid from '../components/categories/CategoryGrid';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Carousel from 'react-native-reanimated-carousel';
+import Animated, {
+  interpolateColor,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
 
 export default function CategoriesPage({ navigation }: any) {
   const insets = useSafeAreaInsets();
-  let backColor = '#ffefd7';
+  const progress = useSharedValue(0);
 
-  const changeBackColor = (currentI: number) => {
-    backColor = backColor;
-  };
+  const animatedBG = useAnimatedStyle(() => {
+    return {
+      backgroundColor: interpolateColor(
+        progress.value,
+        [0, 1, 2, 3],
+        CATEGORYCOLORS,
+      ),
+    };
+  });
 
   const ViewInsets = {
     paddingTop: insets.top,
@@ -21,10 +32,7 @@ export default function CategoriesPage({ navigation }: any) {
   };
 
   return (
-    <Animated.View
-      style={[{ backgroundColor: backColor }, ViewInsets]}
-      className="flex-1"
-    >
+    <Animated.View style={[animatedBG, ViewInsets]} className="flex-1">
       <Carousel
         data={CATEGORIES}
         width={Dimensions.get('window').width}
@@ -40,9 +48,14 @@ export default function CategoriesPage({ navigation }: any) {
               imageName={itemData.item.imageName}
               pros={itemData.item.pros}
               cons={itemData.item.cons}
+              colors={itemData.item.colors}
             />
           );
         }}
+        onProgressChange={(_, b) => {
+          progress.value = b;
+        }}
+        loop={false}
       />
     </Animated.View>
   );
