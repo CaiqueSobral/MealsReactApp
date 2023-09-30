@@ -7,6 +7,7 @@ type Props = {
   imageName: ImageProps;
   pros: string[];
   cons: string[];
+  colors: string[];
   onPress?: () => void;
 };
 
@@ -30,7 +31,10 @@ export default function CategoryGrid(props: Props) {
 
   const renderTitleView = () => {
     return (
-      <View className="w-[90%] mx-2 shadow-xl self-center rounded-3xl bg-[#ffe8c4]">
+      <View
+        className="w-[90%] mx-2 shadow-xl self-center rounded-3xl"
+        style={{ backgroundColor: props.colors[1] }}
+      >
         <Text className="text-center font-extrabold text-3xl">
           {props.title}
         </Text>
@@ -41,14 +45,23 @@ export default function CategoryGrid(props: Props) {
   const renderProsAndConsView = () => {
     return (
       <View className="flex-1 flex-row">
-        <ProsAndConsCard isPro={true} data={props.pros} />
-        <ProsAndConsCard isPro={false} data={props.cons} />
+        <ProsAndConsCard
+          isPro={true}
+          data={props.pros}
+          color={props.colors[1]}
+        />
+        <ProsAndConsCard
+          isPro={false}
+          data={props.cons}
+          color={props.colors[1]}
+        />
       </View>
     );
   };
   return (
     <Pressable
-      className="flex-1 bg-[#FFD89C] m-4 rounded-3xl shadow-2xl"
+      className={`flex-1 m-4 rounded-3xl shadow-2xl`}
+      style={{ backgroundColor: props.colors[0] }}
       onPress={props.onPress}
     >
       <View className="flex-1">
