@@ -7,43 +7,40 @@ const c1 = new Category(
   require('../../assets/images/flags/italy.png'),
   ['Easy cook', 'Cheese', 'Pizza', 'Pasta'],
   ['The same', 'Tiramisu', 'Bread'],
-  ['#FFD89C', '#ffefd7'],
+  ['#ffea95', '#fff5ca'],
 );
 
 const c2 = new Category(
   'c2',
   'German',
   require('../../assets/images/flags/germany.png'),
-  ['Pros1', 'pros2', 'pros3', 'pros4'],
-  ['cons1', 'cons2', 'cons3'],
-  ['#9dac8e', '#C4D7B2'],
+  ['Strudel', 'Sausage', 'Dessert', 'Pretzel'],
+  ['Fatty', 'Seasoning'],
+  ['#88cb76', '#c4e5bb'],
 );
 
 const c3 = new Category(
   'c3',
   'Japanese',
   require('../../assets/images/flags/japan.png'),
-  ['Pros1', 'pros2', 'pros3', 'pros4'],
-  ['cons1', 'cons2', 'cons3'],
-  ['#545B77', '#989dad'],
+  ['Salmon', 'Ramen', 'Healthy'],
+  ['Raw food', 'Chopstick', 'N-Veggie'],
+  ['#897dc4', '#c4bee2'],
 );
 
 const c4 = new Category(
   'c4',
   'French',
   require('../../assets/images/flags/france.png'),
-  ['Pros1', 'pros2', 'pros3', 'pros4'],
-  ['cons1', 'cons2', 'cons3'],
-  ['#BA90C6', '#cfb1d7'],
+  ['Duck', 'Fancy', 'Soup'],
+  ['N-Veggie', '$$$$'],
+  ['#f7909c', '#fbc8ce'],
 );
 
 export const CATEGORIES = [c1, c2, c3, c4];
-export const CATEGORYCOLORS = [
-  c1.colors[1],
-  c2.colors[1],
-  c3.colors[1],
-  c4.colors[1],
-];
+export const CATEGORYCOLORS = CATEGORIES.map((item) => {
+  return item.colors[1];
+});
 
 export const MEALS = [
   new Meal(
