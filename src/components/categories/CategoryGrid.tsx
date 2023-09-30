@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageProps, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ImageProps, Pressable, Text, View } from 'react-native';
 import ProsAndConsCard from './ProsAndConsCard';
 
 type Props = {
@@ -30,7 +30,7 @@ export default function CategoryGrid(props: Props) {
 
   const renderTitleView = () => {
     return (
-      <View>
+      <View className="w-[90%] mx-2 shadow-xl self-center rounded-3xl bg-[#ffe8c4]">
         <Text className="text-center font-extrabold text-3xl">
           {props.title}
         </Text>
@@ -47,8 +47,8 @@ export default function CategoryGrid(props: Props) {
     );
   };
   return (
-    <TouchableOpacity
-      className="flex-1 bg-slate-400 m-4 rounded-3xl shadow-2xl"
+    <Pressable
+      className="flex-1 bg-[#FFD89C] m-4 rounded-3xl shadow-2xl"
       onPress={props.onPress}
     >
       <View className="flex-1">
@@ -56,6 +56,6 @@ export default function CategoryGrid(props: Props) {
         {renderTitleView()}
         {renderProsAndConsView()}
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
