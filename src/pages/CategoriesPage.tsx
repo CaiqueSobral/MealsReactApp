@@ -52,6 +52,12 @@ export default function CategoriesPage({ navigation }: any) {
               pros={itemData.item.pros}
               cons={itemData.item.cons}
               colors={itemData.item.colors}
+              onPress={() => {
+                console.log(itemData.item.id);
+                navigation.navigate('MealsPage' as never, {
+                  categoryId: itemData.item.id,
+                });
+              }}
             />
           );
         }}
