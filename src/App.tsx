@@ -6,7 +6,6 @@ import RootNavigator from './routes/Index';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { Text } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 

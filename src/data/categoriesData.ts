@@ -1,5 +1,4 @@
 import Category from '../models/category';
-import Meal from '../models/meal';
 
 const c1 = new Category(
   'c1',

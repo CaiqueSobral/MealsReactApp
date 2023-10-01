@@ -1,7 +1,6 @@
-import Meal from '../models/meal';
 import { MEALS } from '../data/mealsData';
 import React from 'react';
-import { Dimensions, ListRenderItemInfo, View } from 'react-native';
+import { Dimensions } from 'react-native';
 import MealCard from '../components/meals/MealCard';
 import Carousel from 'react-native-reanimated-carousel';
 import { SafeAreaView } from 'react-native-safe-area-context';
