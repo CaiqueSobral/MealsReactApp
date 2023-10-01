@@ -53,9 +53,9 @@ export default function CategoriesPage({ navigation }: any) {
               cons={itemData.item.cons}
               colors={itemData.item.colors}
               onPress={() => {
-                console.log(itemData.item.id);
                 navigation.navigate('MealsPage' as never, {
                   categoryId: itemData.item.id,
+                  colors: itemData.item.colors,
                 });
               }}
             />

@@ -60,7 +60,7 @@ export default function CategoryGrid(props: Props) {
   };
   return (
     <Pressable
-      className={`flex-1 m-4 rounded-3xl shadow-2xl p`}
+      className={`flex-1 m-4 rounded-3xl shadow-2xl`}
       style={{ backgroundColor: props.colors[0] }}
       onPress={props.onPress}
     >
