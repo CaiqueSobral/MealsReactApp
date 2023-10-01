@@ -2,7 +2,7 @@ import Category from '../models/category';
 
 const c1 = new Category(
   'c1',
-  'Italian',
+  'Italy',
   require('../../assets/images/flags/italy.png'),
   ['Easy cook', 'Cheese', 'Pizza', 'Pasta'],
   ['The same', 'Tiramisu', 'Bread'],
@@ -11,7 +11,7 @@ const c1 = new Category(
 
 const c2 = new Category(
   'c2',
-  'German',
+  'Germany',
   require('../../assets/images/flags/germany.png'),
   ['Strudel', 'Sausage', 'Dessert', 'Pretzel'],
   ['Fatty', 'Seasoning'],
@@ -20,7 +20,7 @@ const c2 = new Category(
 
 const c3 = new Category(
   'c3',
-  'Japanese',
+  'Japan',
   require('../../assets/images/flags/japan.png'),
   ['Salmon', 'Ramen', 'Healthy'],
   ['Raw food', 'Chopstick', 'N-Veggie'],
@@ -29,7 +29,7 @@ const c3 = new Category(
 
 const c4 = new Category(
   'c4',
-  'French',
+  'France',
   require('../../assets/images/flags/france.png'),
   ['Duck', 'Fancy', 'Soup'],
   ['N-Veggie', '$$$$'],

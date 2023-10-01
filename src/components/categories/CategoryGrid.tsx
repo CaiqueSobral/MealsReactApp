@@ -33,29 +33,29 @@ export default function CategoryGrid(props: Props) {
   const renderTitleView = () => {
     return (
       <View
-        className="w-[90%] mx-2 shadow-xl self-center rounded-3xl"
+        className="flex-1 w-[90%] shadow-xl self-center rounded-3xl mb-6"
         style={{ backgroundColor: props.colors[1] }}
       >
-        <Text className="text-center font-extrabold text-3xl" style={FONTRUBIK}>
-          {props.title}
-        </Text>
+        <View className="flex-1 items-center justify-center">
+          <Text
+            className="mt-4 text-center uppercase text-4xl text-gray-700"
+            style={FONTRUBIK}
+          >
+            {props.title}
+          </Text>
+        </View>
+
+        {renderProsAndConsView()}
       </View>
     );
   };
 
   const renderProsAndConsView = () => {
     return (
-      <View className="flex-1 flex-row">
-        <ProsAndConsCard
-          isPro={true}
-          data={props.pros}
-          color={props.colors[1]}
-        />
-        <ProsAndConsCard
-          isPro={false}
-          data={props.cons}
-          color={props.colors[1]}
-        />
+      <View className="flex-[3] flex-row">
+        <ProsAndConsCard isPro={true} data={props.pros} />
+        <View className="h-[70%] w-[2px] bg-gray-700 self-center" />
+        <ProsAndConsCard isPro={false} data={props.cons} />
       </View>
     );
   };
@@ -68,7 +68,6 @@ export default function CategoryGrid(props: Props) {
       <View className="flex-1">
         {renderImageView()}
         {renderTitleView()}
-        {renderProsAndConsView()}
       </View>
     </Pressable>
   );

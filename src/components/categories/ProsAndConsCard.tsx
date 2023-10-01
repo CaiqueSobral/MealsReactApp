@@ -5,15 +5,13 @@ import { FONTRUBIK } from '../../data/constants';
 type Props = {
   isPro: boolean;
   data: string[];
-  color: string;
 };
 export default function ProsAndConsCard(props: Props) {
   return (
     <View
-      style={{ backgroundColor: props.color }}
       className={`flex-1 ${
         props.isPro ? 'ml-4 mr-2' : 'mr-4 ml-2'
-      } my-4 items-start justify-center px-4 rounded-3xl shadow-xl`}
+      } items-start justify-center px-4`}
     >
       {props.data.map((item, i) => {
         return (
@@ -26,7 +24,7 @@ export default function ProsAndConsCard(props: Props) {
               }
               className="w-5 h-5 mr-2"
             />
-            <Text className="text-2xl font-semibold" style={FONTRUBIK}>
+            <Text className="text-xl font-bold text-gray-700" style={FONTRUBIK}>
               {item}
             </Text>
           </View>
