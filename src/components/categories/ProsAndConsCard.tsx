@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
+import { FONTRUBIK } from '../../data/constants';
 
 type Props = {
   isPro: boolean;
@@ -25,7 +26,9 @@ export default function ProsAndConsCard(props: Props) {
               }
               className="w-5 h-5 mr-2"
             />
-            <Text className="text-2xl">{item}</Text>
+            <Text className="text-2xl font-semibold" style={FONTRUBIK}>
+              {item}
+            </Text>
           </View>
         );
       })}

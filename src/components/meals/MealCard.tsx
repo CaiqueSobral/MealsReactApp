@@ -1,8 +1,6 @@
 import Meal from '../../models/meal';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Dimensions } from 'react-native/Libraries/Utilities/Dimensions';
 import MealAttribute from './mealsAtts';
 import {
   glutenFreeIcon,
@@ -10,6 +8,7 @@ import {
   veganIcon,
   vegetarianIcon,
 } from '../../data/mealsData';
+import { FONTRUBIK } from '../../data/constants';
 
 type Props = {
   meal: Meal;
@@ -76,20 +75,23 @@ export default function MealCard(props: Props) {
       >
         <View>
           <View className="flex">
-            <Text className="text-center text-xl font-semibold">
+            <Text className="text-center text-xl font-bold" style={FONTRUBIK}>
               {props.meal.title}
             </Text>
           </View>
           <View className="flex-row mt-4 py-2">
             <View className="flex-1 items-center pb-2 justify-center">
-              <Text className="mb-2 text-center font-medium">
+              <Text className="mb-2 text-center font-bold" style={FONTRUBIK}>
                 {props.meal.complexity}
               </Text>
               {renderDifficulty()}
             </View>
             <View className="w-[2px] h-[100%] bg-gray-400"></View>
             <View className="flex-1 items-center justify-center">
-              <Text className="text-xl font-bold text-gray-600">
+              <Text
+                className="text-xl font-bold text-gray-600"
+                style={FONTRUBIK}
+              >
                 {props.meal.affordability}
               </Text>
             </View>

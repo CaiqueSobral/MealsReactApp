@@ -1,3 +1,4 @@
+import { FONTRUBIK } from '../../data/constants';
 import { xIcon } from '../../data/mealsData';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
@@ -21,7 +22,7 @@ export default function MealAttribute(props: Props) {
         />
       </View>
       <View className="flex">
-        <Text>
+        <Text style={FONTRUBIK}>
           {!props.yn ? 'Not ' : ''}
           {props.title}
         </Text>

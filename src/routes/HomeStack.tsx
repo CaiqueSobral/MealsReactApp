@@ -1,3 +1,4 @@
+import HomePage from '../pages/HomePage';
 import CategoriesPage from '../pages/CategoriesPage';
 import MealsPage from '../pages/MealsPage';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,6 +7,10 @@ import React from 'react';
 const Stack = createNativeStackNavigator();
 
 const SCREENS = [
+  {
+    name: 'HomePage',
+    component: HomePage,
+  },
   {
     name: 'Categories',
     component: CategoriesPage,
@@ -19,7 +24,7 @@ const SCREENS = [
 export default function HomeStackNavigator() {
   return (
     <Stack.Navigator
-      initialRouteName="Categories"
+      initialRouteName="HomePage"
       screenOptions={{
         headerShown: false,
         contentStyle: { backgroundColor: 'transparent' },

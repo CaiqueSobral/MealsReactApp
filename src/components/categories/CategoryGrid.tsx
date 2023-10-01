@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, ImageProps, Pressable, Text, View } from 'react-native';
 import ProsAndConsCard from './ProsAndConsCard';
+import { FONTRUBIK } from '../../data/constants';
 
 type Props = {
   title: string;
@@ -35,7 +36,7 @@ export default function CategoryGrid(props: Props) {
         className="w-[90%] mx-2 shadow-xl self-center rounded-3xl"
         style={{ backgroundColor: props.colors[1] }}
       >
-        <Text className="text-center font-extrabold text-3xl">
+        <Text className="text-center font-extrabold text-3xl" style={FONTRUBIK}>
           {props.title}
         </Text>
       </View>
