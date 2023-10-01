@@ -23,7 +23,7 @@ export default function HomeStackNavigator() {
       screenOptions={{
         headerShown: false,
         contentStyle: { backgroundColor: 'transparent' },
-        animation: 'fade',
+        animation: 'slide_from_right',
       }}
     >
       {SCREENS.map((screenData, i) => {
