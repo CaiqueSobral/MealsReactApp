@@ -1,16 +1,34 @@
 import Meal from '../models/meal';
 
+export const glutenFreeIcon = require('../../assets/icons/meals/glutenFree.png');
+export const lactoseFreeIcon = require('../../assets/icons/meals/lactoseFree.png');
+export const veganIcon = require('../../assets/icons/meals/vegan.png');
+export const vegetarianIcon = require('../../assets/icons/meals/vegetarian.png');
+export const xIcon = require('../../assets/icons/meals/x.png');
+
 export const MEALS = [
   new Meal(
     'm1',
     'c1',
     'Spaghetti',
-    'affordable',
-    'simple',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+    '$$',
+    'easy',
+    'https://i.pinimg.com/474x/c9/18/84/c9188488f6470f804446a4580217a03b.jpg',
     false,
     true,
     true,
     true,
+  ),
+  new Meal(
+    'm2',
+    'c1',
+    'Cheese Pizza',
+    '$$',
+    'Medium',
+    'https://img.freepik.com/vetores-gratis/fatia-voadora-de-ilustracao-em-vetor-pizza-dos-desenhos-animados-vetor-isolado-conceito-de-fast-food-estilo-flat-cartoon_138676-1934.jpg?size=626&ext=jpg&ga=GA1.1.38838237.1696109821&semt=ais',
+    false,
+    false,
+    true,
+    false,
   ),
 ];
