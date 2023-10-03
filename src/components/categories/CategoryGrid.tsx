@@ -1,5 +1,11 @@
 import React from 'react';
-import { Image, ImageProps, Pressable, Text, View } from 'react-native';
+import {
+  Image,
+  ImageProps,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import ProsAndConsCard from './ProsAndConsCard';
 import { FONTRUBIK } from '../../data/constants';
 
@@ -60,15 +66,16 @@ export default function CategoryGrid(props: Props) {
     );
   };
   return (
-    <Pressable
-      className={`flex-1 m-4 rounded-3xl shadow-2xl`}
-      style={{ backgroundColor: props.colors[0] }}
-      onPress={props.onPress}
-    >
-      <View className="flex-1">
-        {renderImageView()}
-        {renderTitleView()}
+    <TouchableWithoutFeedback onPress={props.onPress}>
+      <View
+        className={`flex-1 m-4 rounded-3xl shadow-2xl`}
+        style={{ backgroundColor: props.colors[0] }}
+      >
+        <View className="flex-1">
+          {renderImageView()}
+          {renderTitleView()}
+        </View>
       </View>
-    </Pressable>
+    </TouchableWithoutFeedback>
   );
 }
