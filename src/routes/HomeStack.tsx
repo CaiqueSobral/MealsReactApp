@@ -1,25 +1,32 @@
 import HomePage from '../pages/HomePage';
 import CategoriesPage from '../pages/CategoriesPage';
 import MealsPage from '../pages/MealsPage';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React from 'react';
+import {
+  NativeStackScreenProps,
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
+import React, { ReactElement, ReactNode } from 'react';
 
-const Stack = createNativeStackNavigator();
+type StackParamList = {
+  HomePage: undefined;
+  Categories: undefined;
+  MealsPage: { categoryId: string; colors: Array<string> };
+};
 
-const SCREENS = [
-  {
-    name: 'HomePage',
-    component: HomePage,
-  },
-  {
-    name: 'Categories',
-    component: CategoriesPage,
-  },
-  {
-    name: 'MealsPage',
-    component: MealsPage,
-  },
-];
+export type HomePageScreenProps = NativeStackScreenProps<
+  StackParamList,
+  'HomePage'
+>;
+export type CategoriesScreenProps = NativeStackScreenProps<
+  StackParamList,
+  'Categories'
+>;
+export type MealsPageScreenProps = NativeStackScreenProps<
+  StackParamList,
+  'MealsPage'
+>;
+
+const Stack = createNativeStackNavigator<StackParamList>();
 
 export default function HomeStackNavigator() {
   return (
@@ -31,15 +38,9 @@ export default function HomeStackNavigator() {
         animation: 'slide_from_right',
       }}
     >
-      {SCREENS.map((screenData, i) => {
-        return (
-          <Stack.Screen
-            key={i}
-            name={screenData.name}
-            component={screenData.component}
-          ></Stack.Screen>
-        );
-      })}
+      <Stack.Screen name="HomePage" component={HomePage}></Stack.Screen>
+      <Stack.Screen name="Categories" component={CategoriesPage}></Stack.Screen>
+      <Stack.Screen name="MealsPage" component={MealsPage}></Stack.Screen>
     </Stack.Navigator>
   );
 }

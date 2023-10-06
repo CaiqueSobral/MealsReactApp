@@ -6,7 +6,7 @@ export const veganIcon = require('../../assets/icons/meals/vegan.png');
 export const vegetarianIcon = require('../../assets/icons/meals/vegetarian.png');
 export const xIcon = require('../../assets/icons/meals/x.png');
 
-export const MEALS = [
+export const MEALS: Array<Meal> = [
   new Meal(
     'm1',
     'c1',

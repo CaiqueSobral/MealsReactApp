@@ -24,12 +24,9 @@ export default function CategoryGrid(props: Props) {
       <View className="flex-1 justify-center items-center">
         <View className="w-[80%] h-[80%] shadow-3xl shadow-gray-600">
           <Image
-            style={{
-              width: undefined,
-              height: undefined,
-            }}
             source={props.imageName}
-            className="flex-1 rounded-3xl"
+            resizeMode="contain"
+            className="h-full w-full rounded-3xl"
           />
         </View>
       </View>

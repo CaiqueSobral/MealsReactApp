@@ -12,7 +12,7 @@ import { FONTRUBIK } from '../../data/constants';
 
 type Props = {
   meal: Meal;
-  colors: string;
+  colors: string[];
 };
 
 export default function MealCard(props: Props) {

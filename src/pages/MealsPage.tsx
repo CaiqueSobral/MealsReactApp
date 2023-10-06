@@ -4,8 +4,9 @@ import { Dimensions } from 'react-native';
 import MealCard from '../components/meals/MealCard';
 import Carousel from 'react-native-reanimated-carousel';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { MealsPageScreenProps } from '@/routes/HomeStack';
 
-export default function MealsPage({ route }: any) {
+export default function MealsPage({ route }: MealsPageScreenProps) {
   const catId = route.params.categoryId;
   const colors = route.params.colors;
 
